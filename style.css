@@ -118,11 +118,6 @@ button[disabled] {
   overflow: hidden;
 }
 
-/* Need Generate I.D
-#generate {
-
-} */
-
 @media (max-width: 690px) {
   .btn {
     font-size: 1rem;
