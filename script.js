@@ -13,9 +13,9 @@ function writePassword() {
 
 }
 
-
+// Array of random numbers for spread
 var nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-var spec = ['&', '!', '#', '%', '*', '$', '(', ')', '+', '-', ',', '.', '\', '/', \':', ';', '<', '=', '>', '?', '@', '[', '\', \']', '^', '_', '`', '{', '|', '}', '~']
+var spec = ['&', '!', '#', '%', '*', '$', '(', ')', '+', '-', ',', '.', '', '/', ':', ';', '<', '=', '>', '?', '@', '[', '', ']', '^', '_', '`', '{', '|', '}', '~']
 var lower = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 var upper =['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
 
@@ -31,6 +31,7 @@ function generatePassword () {
     var specChar =  confirm('Include Special Characters?', 'Enter Characters')
     var createdAlert = alert('Password has been Created')
 
+    //Spread of random characters in 
     if (upperChar) {
       possible = [...upper, ...possible]
     } if (lowerChar) {
@@ -41,21 +42,17 @@ function generatePassword () {
       possible = [...spec, ...possible]
     }
 
-    console.log(possible)
-    // Function 
 
-    
     var test = " "
     var str = '';
-    for (i=0; i <= lengthChar.length; i++) {
+    for (i=0; i <= lengthChar; i++) {
       
-      var str = possible[Math.floor(Math.random()*[lengthChar.length])]
-      test += str[possible]
-      console.log(test)
+      var randomChar = possible[Math.floor(Math.random()*[lengthChar])]
+      test += randomChar
     }
 
+      return test
 
-    //  return password
   } else {
     generatePassword ()
   }
