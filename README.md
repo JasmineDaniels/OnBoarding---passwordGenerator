@@ -4,5 +4,7 @@ A password generator designed to create secure passwords for all employees with 
 
 ## Go Check It Out
 
-[OnBoard Password Generator](https://jasminedaniels.github.io/OnBoarding---passwordGenerator/)
+[OnBoard Password Generator Webpage](https://jasminedaniels.github.io/OnBoarding---passwordGenerator/)
+
+
 ![Password Generator Image](/images/pw-gen.png)
