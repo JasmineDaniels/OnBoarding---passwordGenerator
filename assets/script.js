@@ -4,16 +4,6 @@
 // Get references to the #generate element
 var generateBtn = document.getElementById("generate");
 
-// function passwordReady() {
-//   var generated = "Password is Ready!";
-//   if (password) {
-//   var readyText = document.getElementById("generate").innerText; 
-
-//   readyText.value = generated
-//   }
-//   generateBtn.addEventListener
-// }
-
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
@@ -31,15 +21,17 @@ var upper =['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N'
 
 
 function generatePassword () {
-  var possible = []
+  var possible = [] //collects chosen random characters
+
   var proceed = confirm('Begin Password Generator?')
-  if (proceed) {
+  if (proceed) {   // option to enter generator
     var lengthChar = prompt('How many Characters?\nPassword must be between 8 & 128 characters', 'Enter Password Length')
     if (lengthChar >= 8 && lengthChar <= 128) {
       var upperChar =  confirm('Include Uppercase?', 'Enter Characters')
       var lowerChar=  confirm('Include Lowercase?', 'Enter Characters')
       var numChar =  confirm('Include Numbers?', 'Enter Characters')
       var specChar =  confirm('Include Special Characters?', 'Enter Characters')
+      // If no characters are chosen start over 
       if (!lowerChar && !upperChar && !numChar && !specChar){
         imPossible()
         function imPossible() {
@@ -48,9 +40,7 @@ function generatePassword () {
         }
       }
       
-      // var createdAlert = alert('Password has been Created')
-
-      //Spread of random characters in 
+      //Spread of possible random characters to choose from  
       if (upperChar) {
         possible = [...upper, ...possible]
       } if (lowerChar) {
@@ -63,12 +53,14 @@ function generatePassword () {
 
       var password = " "
       for (i=0; i <= lengthChar; i++) {
-        
+        // random characters * the value of length char 
         var randomChar = possible[Math.floor(Math.random()*[lengthChar])]
         password += randomChar
       }
+       
       return password
 
+      // If password length is less than 8 or more than 128 send alert
     } if (lengthChar < 8){
       tooShort()
       function tooShort () {
@@ -91,3 +83,4 @@ function generatePassword () {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
