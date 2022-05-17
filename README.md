@@ -2,6 +2,7 @@
 
 A password generator designed to create secure passwords for all employees with access to sensitive data.
 
+## Go Check It Out
 
-
-![Password Generator Image](./assets/images/pw-gen.png)
+[OnBoard Password Generator](https://jasminedaniels.github.io/OnBoarding---passwordGenerator/)
+![Password Generator Image](/images/pw-gen.png)
